@@ -48,7 +48,12 @@ public abstract class Transaccion {
     
     
     public abstract double calcularImpuesto(double monto);
-    public abstract void procesarTransaccion(ArrayList Ingresos);
+    public abstract void procesarTransaccion(ArrayList Ingresos)throws ExcepcionTransaccion;
+
+    @Override
+    public String toString() {
+        return "Monto: " + monto + ",Descripcion: " + descripcion + ", Fecha: " + fecha; 
+    }
     
     
     

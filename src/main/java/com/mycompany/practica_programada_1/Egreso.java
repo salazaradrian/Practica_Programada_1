@@ -11,9 +11,14 @@ import java.util.ArrayList;
  * @author rperez
  */
 public class Egreso extends Transaccion{
+    private double capital;
     
-    public Egreso(double monto, String descripcion, String fecha) {
+    public Egreso(double monto, String descripcion, String fecha) throws ExcepcionTransaccion{
         super(monto, descripcion, fecha);
+        this.capital = capital;
+        if (monto > capital){
+            throw new ExcepcionTransaccion("El egreso excede el capital disponible");
+        }
     }
     
     @Override
